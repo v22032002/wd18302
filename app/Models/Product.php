@@ -20,9 +20,13 @@ class Product extends Model
         'created_at',
         'update_at'
     ];
+    public function listCate(){
+        return $this->belongsTo(Category::class, 'category_id');
+    }
     public function loadAllDataProductWithPager(){
         // ORM
         $query = Product::query()
+            ->with('listCate')
             ->latest('id')
             ->paginate(10);
         return $query;

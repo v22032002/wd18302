@@ -31,7 +31,7 @@
                     <img src="{{$item->image}}">
                 @endif
             </td>
-            <td>{{$item->name}}category name</td>
+            <td>{{$item->listCate->name}}</td>
             <td>
                 <button type="button" class="btn btn-danger">Xóa</button>
                 <button type="button" class="btn btn-warning">Sửa</button>
@@ -40,4 +40,5 @@
         @endforeach
         </tbody>
     </table>
+    {{$listPro->links()}}
 @endsection
