@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use \App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,3 +56,5 @@ Route::get('/posts', function () {
     dd($data);
 //    return view('welcome');
 });
+Route::get('/products', [ProductController::class, 'index'])
+    ->name('products.index');
