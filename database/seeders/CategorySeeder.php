@@ -13,7 +13,6 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
         $cateSeed = [];
         for ($i = 1; $i <= 10; $i++ ){
             $cateSeed[] = [

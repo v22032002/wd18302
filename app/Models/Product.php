@@ -18,18 +18,16 @@ class Product extends Model
         'category_id',
         'status',
         'created_at',
-        'update_at'
+        'updated_at'
+        
     ];
     public function listCate(){
         return $this->belongsTo(Category::class, 'category_id');
     }
-    public function loadAllDataProductWithPager(){
-        // ORM
-        $query = Product::query()
-            ->with('listCate')
-            ->latest('id')
-            ->paginate(10);
+    public function loadAllDateProductWithPager(){
+        $query = Product::query()->latest('id')
+        ->with('listCate')
+        ->paginate(10);
         return $query;
-
     }
 }
